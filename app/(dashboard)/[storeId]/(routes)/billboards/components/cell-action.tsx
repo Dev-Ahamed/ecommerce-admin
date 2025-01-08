@@ -27,11 +27,11 @@ interface CellActionProps {
 export const CellAction = ({ data }: CellActionProps) => {
   const router = useRouter();
   const params = useParams();
-//   const {
-//     data: billboards,
-//     totalRecords,
-//     fetchData,
-//   } = useBillboards(params.storeId as string);
+  //   const {
+  //     data: billboards,
+  //     totalRecords,
+  //     fetchData,
+  //   } = useBillboards(params.storeId as string);
 
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
@@ -48,7 +48,7 @@ export const CellAction = ({ data }: CellActionProps) => {
 
         let imageDelete;
         if (data.imageUrl) {
-          imageDelete = await handleImageRemove(data.imageUrl);
+          imageDelete = await handleImageRemove([data.imageUrl]);
         }
         router.refresh();
         // await fetchData({ pageIndex: 0, pageSize: 10 }, "");
