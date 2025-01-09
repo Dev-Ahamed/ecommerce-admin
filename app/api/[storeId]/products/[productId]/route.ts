@@ -36,14 +36,14 @@ export async function GET(
       },
     });
 
-    const formattedProduct = {
-      ...product,
-      price: product?.price
-        ? priceFormatter.format(product?.price.toNumber())
-        : "N/A",
-    };
+    // const formattedProduct = {
+    //   ...product,
+    //   price: product?.price
+    //     ? priceFormatter.format(product?.price.toNumber())
+    //     : "N/A",
+    // };
 
-    return NextResponse.json(formattedProduct);
+    return NextResponse.json(product);
   } catch (error) {
     console.log("[PRODUCT_GET]: ", error);
     return NextResponse.json("Internal error", { status: 500 });
